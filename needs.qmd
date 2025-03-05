@@ -2,8 +2,12 @@
 
 What does someone trying to accomplish your chosen task need help with? 
 
+They will need help understanding why we need to estimate for missing values in our data set along with a method to use to properly estimate missing values.
+
 What parts are likely to be tricky? 
+
+Understanding the methods mathematically can be difficult as I do not fully understand the methods but implementing them in R is a task that can definitely be understood. 
 
 What resources are already available on this topic that may be helpful? Look for e.g. software vignettes, package documentation, papers about software packages, and so on.
 
-
+There are packages out there that allow for Bayesian imputation on missing data which is what I am trying to show and accomplish a way to estimate missing values using Bayesian imputation.

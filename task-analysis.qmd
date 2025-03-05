@@ -5,16 +5,27 @@ Here are some questions to guide you through the process of doing a task analysi
 
 What are the prerequisites, for both knowledge and e.g. software setup? 
 
+The perquisites are understanding how to anayze data and run a linear model. Knowing what missing data is. Knowimg basic statistical concepts not necessarily the mathmatics behind it just how to apply it. 
+
 What are the basic requirements for any data that the method is used on? 
   - Are missing values allowed? 
+  Missing values are allowed and in fact that is the whole purpose of this method is to analyze the data using imputaiton liklihood methods for missing data.
   - Should the data be confined within a certain range? 
   - Does the data have to be approximately normally distributed? 
 
 What are the basic components of the task?
   - Outline these in a bit more detail
+- having data with missing values
+- knowing what not to do with missing values
+- knowng how to implement package in R to estimate for missing values
+- know how to apply this in a variety of situations. 
 
 
 What decisions does the user need to be prepared to make on the fly?
+
+- what method of imputation to use
+- how to use the package in R
+
 
 What questions should the user ask of the "first draft" of the product? What adjustments may need to be made?
 
