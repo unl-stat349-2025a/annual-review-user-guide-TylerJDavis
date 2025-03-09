@@ -25,7 +25,7 @@
     "href": "topic.html",
     "title": "Appendix A — Topic",
     "section": "",
-    "text": "Pick some subset of the information covered in your annual review article that you are interested in exploring in more detail.\nIdentify the scope of your user guide - what will you cover? Specific software packages? When to use or not to use a specific technique?\nI will look into using likelihood methods for analyzing missing data, I will cover how to use it and when to use it. I will attempt to discover how to implement it in R.",
+    "text": "Pick some subset of the information covered in your annual review article that you are interested in exploring in more detail.\nIdentify the scope of your user guide - what will you cover? Specific software packages? When to use or not to use a specific technique?\nI will look into using likelihood methods for analyzing missing data, I will cover how to use it and when to use it. I will attempt to discover how to implement it in R. This will be done by showing a example of using the mice package, found in R. This example will show the basics and give a broad understanding of how to apply this package to a variety of issues.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Topic</span>"

@@ -11,19 +11,13 @@ You don't have to specifically answer each one of these (and some may not apply)
 
 What are the prerequisites, for both knowledge and e.g. software setup?
 
--   The perquisites are understanding how to analyze data and run a linear model.
-    Knowing what missing data is.
-    Knowing basic statistical concepts not necessarily the mathematics behind it just how to apply it.
-    The software needed to complete this task can be found in the R packages lattice and mice for the simple example in the user guide.
-    There is other packages that the user may need but that will be on a case by case basis.
+-   The perquisites are understanding how to analyze data and run a linear model. Knowing what missing data is. Knowing basic statistical concepts not necessarily the mathematics behind it just how to apply it. The software needed to complete this task can be found in the R packages lattice and mice for the simple example in the user guide. There is other packages that the user may need but that will be on a case by case basis.
 
 What are the basic requirements for any data that the method is used on?
 Should the data be confined within a certain range?
 Does the data have to be approximately normally distributed?
 
--   The basic requirements is that the data has missing values as this is a imputation method to estimate missing values.
-    We also know that the data can be of any form.
-    The mice package has a wide range of methods that it used to estimate values which allows variety and flexibility in the type of data it uses.
+-   The basic requirements is that the data has missing values as this is a imputation method to estimate missing values. We also know that the data can be of any form. The mice package has a wide range of methods that it used to estimate values which allows variety and flexibility in the type of data it uses.
 
 What are the basic components of the task?
 Outline these in a bit more detail.
@@ -42,6 +36,15 @@ What decisions does the user need to be prepared to make on the fly?
 -   How to set up prediction matrix
 -   How to select method of estimation
 -   How to compare imputation data set to original data set
+
+What questions should the user ask of the "first draft" of the product?
+What adjustments may need to be made?
+
+-   I think the user will ask questions of how to apply this package a variety of problems that may not have been discussed in the user guide.
+
+-   The user may also want to know more about the behind the scenes math that powers the package which this user will not be touching on.
+
+-   Adjustments that may need to be made might be adding on to this user guide more examples for a variety of situations that may not be as common to see more specified cases of the mice package.
 
 ## Additional Guidance
 
