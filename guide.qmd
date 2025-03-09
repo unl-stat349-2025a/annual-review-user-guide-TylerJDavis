@@ -1,5 +1,1 @@
-# User Guide
-
-First off, you should change this section title to something more appropriate.
-
-Next, well, that's up to you. Good luck!
+# User Guide for Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R

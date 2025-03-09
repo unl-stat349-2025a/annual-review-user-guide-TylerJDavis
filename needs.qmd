@@ -1,13 +1,13 @@
 # Needs Assessment {.appendix}
 
-What does someone trying to accomplish your chosen task need help with? 
+What does someone trying to accomplish your chosen task need help with?
 
-They will need help understanding why we need to estimate for missing values in our data set along with a method to use to properly estimate missing values.
+-   They will need help understanding why we need to estimate for missing values in our data set along with a method to use to properly estimate missing values. This will also mean they have to understand how and when to use the mice package in R and what methods to use for each variable.
 
-What parts are likely to be tricky? 
+What parts are likely to be tricky?
 
-Understanding the methods mathematically can be difficult as I do not fully understand the methods but implementing them in R is a task that can definitely be understood. 
+-   Understanding the methods mathematically can be difficult as I do not fully understand the methods but implementing them in R is a task that can definitely be understood. This can be done with the mice package. I think a tricky element of this package can be understanding the prediction matrix along with what it is actually doing when the imputation is taking place.
 
 What resources are already available on this topic that may be helpful? Look for e.g. software vignettes, package documentation, papers about software packages, and so on.
 
-There are packages out there that allow for Bayesian imputation on missing data which is what I am trying to show and accomplish a way to estimate missing values using Bayesian imputation.
+-   There is vignettes available which will be attached in a section in the user guide along with the references. We can see that there is also R documentation papers on this package which will also be attached.
