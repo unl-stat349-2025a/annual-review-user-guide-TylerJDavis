@@ -1,9 +1,31 @@
-# User Guide for Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R
+# Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R
 
-Prerequisite
+## Introduction
 
-motivation
+Data has become the lifeblood on today's world. It is used in almost every industry to track, organize, and solve businesses problems. This is why it is more crucial than ever to understand how to handle data properly to get results that can help you grow your business. One of the issues that comes across when analyzing a data set in dealing with missing values. Our first instinct is to throw those values out and analyze that data that we do have, yet this is not a viable option according to Little, @little2021. Little discusses in his paper a variety of ways to properly estimate missing values in a data set, one option is imputation likelihood methods. This method allows you to get estimates for your missing values which intern allows you to get accurate information from your data set as a whole. A package called "mice" found in R can complete these missing data estimations which allow you to properly analyze your data, @vanbuurenMiceMultivariateImputation2006. This guide will attempt to discuss the processes and methods involved with using this package on a data set. This example will be used as a guide to understanding how to implement this package on future data that you may come across.
 
-breakdown and example
+## Prerequisites
 
-where to find more information
+The prerequisites to understanding how to use this package are basic statistical knowledge and ablility on par with running a linear model in R. You have to understand how to recognize missing data and how to classify variables, numerical, categorical, etc. Knowing what missing data is. You must understand the basics of matricies along with applying different manipulations to data. The software needed to complete this task can be found in the R packages lattice and mice for the simple example which will be described in detail below. There is other packages that the you may need but that will be on a case by case basis.
+
+## Explanation of Example
+
+1.  The first step of this example is to load in the mice package.
+
+    ```{r}
+    # Load required package
+    library(mice)
+    ```
+
+2.  The next object is to load in an example data set from the mice package for demonstration. In most cases your data set will be loaded in before you call you package. This will allow you to see the structure of the data and if the mice package is necessary.
+
+```{r}
+# Load example dataset
+data(nhanes2)
+# Check the structure of the dataset
+str(nhanes2)
+# Check missing data pattern
+md.pattern(nhanes2)
+```
+
+3.  
