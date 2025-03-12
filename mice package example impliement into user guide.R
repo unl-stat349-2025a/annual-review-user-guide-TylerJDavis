@@ -3,10 +3,8 @@ library(mice)
 
 # Load example dataset
 data(nhanes2)
-
 # Check the structure of the dataset
 str(nhanes2)
-
 # Check missing data pattern
 md.pattern(nhanes2)
 

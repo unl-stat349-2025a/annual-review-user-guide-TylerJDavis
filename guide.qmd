@@ -1,1 +1,9 @@
 # User Guide for Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R
+
+Prerequisite
+
+motivation
+
+breakdown and example
+
+where to find more information

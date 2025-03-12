@@ -13,11 +13,11 @@
   {
     "objectID": "guide.html",
     "href": "guide.html",
-    "title": "1  User Guide",
+    "title": "1  Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R",
     "section": "",
-    "text": "First off, you should change this section title to something more appropriate.\nNext, well, that’s up to you. Good luck!",
+    "text": "1.1 Introduction\nData has become the lifeblood on today’s world. It is used in almost every industry to track, organize, and solve businesses problems. This is why it is more crucial than ever to understand how to handle data properly to get results that can help you grow your business. One of the issues that comes across when analyzing a data set in dealing with missing values. Our first instinct is to throw those values out and analyze that data that we do have, yet this is not a viable option according to Little, Little (2021). Little discusses in his paper a variety of ways to properly estimate missing values in a data set, one option is imputation likelihood methods. This method allows you to get estimates for your missing values which intern allows you to get accurate information from your data set as a whole. A package called “mice” found in R can complete these missing data estimations which allow you to properly analyze your data, Van Buuren and Groothuis-Oudshoorn (n.d.). This guide will attempt to discuss the processes and methods involved with using this package on a data set. This example will be used as a guide to understanding how to implement this package on future data that you may come across.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>User Guide</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</span>"
     ]
   },
   {
@@ -57,9 +57,39 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Posit PBC. 2024. “Creating a Book. Quarto.” July 1, 2024.\nhttps://quarto.org/docs/books/.",
+    "text": "Little, Roderick J. 2021. “Missing Data Assumptions.”\nAnnual Review of Statistics and Its Application 8 (1): 89–107.\nhttps://doi.org/10.1146/annurev-statistics-040720-031104.\n\n\nPosit PBC. 2024. “Creating a Book. Quarto.” July 1, 2024.\nhttps://quarto.org/docs/books/.\n\n\nVan Buuren, Stef, and Karin Groothuis-Oudshoorn. n.d. “Mice:\nMultivariate Imputation by Chained Equations.” https://doi.org/10.32614/CRAN.package.mice.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "guide.html#prerequisites",
+    "href": "guide.html#prerequisites",
+    "title": "1  Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R",
+    "section": "1.2 Prerequisites",
+    "text": "1.2 Prerequisites\nThe prerequisites to understanding how to use this package are basic statistical knowledge and ablility on par with running a linear model in R. You have to understand how to recognize missing data and how to classify variables, numerical, categorical, etc. Knowing what missing data is. You must understand the basics of matricies along with applying different manipulations to data. The software needed to complete this task can be found in the R packages lattice and mice for the simple example which will be described in detail below. There is other packages that the you may need but that will be on a case by case basis.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</span>"
+    ]
+  },
+  {
+    "objectID": "guide.html#motivation",
+    "href": "guide.html#motivation",
+    "title": "1  Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R",
+    "section": "1.3 Motivation",
+    "text": "1.3 Motivation\nbreakdown and example\nwhere to find more information\n\n\n\n\nLittle, Roderick J. 2021. “Missing Data Assumptions.” Annual Review of Statistics and Its Application 8 (1): 89–107. https://doi.org/10.1146/annurev-statistics-040720-031104.\n\n\nVan Buuren, Stef, and Karin Groothuis-Oudshoorn. n.d. “Mice: Multivariate Imputation by Chained Equations.” https://doi.org/10.32614/CRAN.package.mice.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</span>"
+    ]
+  },
+  {
+    "objectID": "guide.html#explanation-of-example",
+    "href": "guide.html#explanation-of-example",
+    "title": "1  Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R",
+    "section": "1.3 Explanation of Example",
+    "text": "1.3 Explanation of Example\n\nThe first step of this example is to load in the mice package.\n\n# Load required package\nlibrary(mice)\n\nWarning: package 'mice' was built under R version 4.3.3\n\n\nWarning in check_dep_version(): ABI version mismatch: \nlme4 was built with Matrix ABI version 1\nCurrent Matrix ABI version is 0\nPlease re-install lme4 from source or restore original 'Matrix' package\n\n\n\nAttaching package: 'mice'\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following objects are masked from 'package:base':\n\n    cbind, rbind\n\n\nThe next object is to load in an example data set from the mice package for demonstration. In most cases your data set will be loaded in before you call you package. This will allow you to see the structure of the data and if the mice package is necessary.\n\n\n# Load example dataset\ndata(nhanes2)\n# Check the structure of the dataset\nstr(nhanes2)\n\n'data.frame':   25 obs. of  4 variables:\n $ age: Factor w/ 3 levels \"20-39\",\"40-59\",..: 1 2 1 3 1 3 1 1 2 2 ...\n $ bmi: num  NA 22.7 NA NA 20.4 NA 22.5 30.1 22 NA ...\n $ hyp: Factor w/ 2 levels \"no\",\"yes\": NA 1 1 NA 1 NA 1 1 1 NA ...\n $ chl: num  NA 187 187 NA 113 184 118 187 238 NA ...\n\n# Check missing data pattern\nmd.pattern(nhanes2)\n\n\n\n\n\n\n\n\n   age hyp bmi chl   \n13   1   1   1   1  0\n3    1   1   1   0  1\n1    1   1   0   1  1\n1    1   0   0   1  2\n7    1   0   0   0  3\n     0   8   9  10 27\n\n\n\n\n\n\n\n\n\nLittle, Roderick J. 2021. “Missing Data Assumptions.” Annual Review of Statistics and Its Application 8 (1): 89–107. https://doi.org/10.1146/annurev-statistics-040720-031104.\n\n\nVan Buuren, Stef, and Karin Groothuis-Oudshoorn. n.d. “Mice: Multivariate Imputation by Chained Equations.” https://doi.org/10.32614/CRAN.package.mice.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</span>"
     ]
   }
 ]
