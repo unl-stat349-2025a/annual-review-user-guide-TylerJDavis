@@ -6,7 +6,7 @@ editor:
 
 # Introduction {.unnumbered}
 
-Data has become the lifeblood on today's world.
+Data has become the lifeblood of today's world.
 It is used in almost every industry to track, organize, and solve businesses problems.
 This is why it is more crucial than ever to understand how to handle data properly to get results that can help you grow your business.
 One of the issues that comes across when analyzing a data set in dealing with missing values.
@@ -21,7 +21,8 @@ This example will be used as a guide to understanding how to implement this pack
 
 The prerequisites to understanding how to use this package are basic statistical knowledge and ability on par with running a linear model in R.
 You have to understand how to recognize missing data and how to classify variables, numerical, categorical, etc.
-Knowing what missing data is.
+You need to know what missing values in a data set are.
 You must understand the basics of matrices along with applying different manipulations to data.
 The software needed to complete this task can be found in the R packages lattice and mice for the simple example which will be described in detail below.
 There is other packages that the you may need but that will be on a case by case basis.
+The pure imputation is done purely by the mice package itself which can be found in the example section.

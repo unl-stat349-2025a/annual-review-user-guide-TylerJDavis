@@ -8,7 +8,7 @@ date-format: long
 from: markdown+emoji
 
 book:
-  title: "User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R"
+  title: "User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R Using the Mice Package"
   author: "Tyler Davis"
   page-footer:
     left: "Copyright 2025, Tyler Davis"

@@ -9,7 +9,7 @@
 <meta name="author" content="Tyler Davis">
 <meta name="dcterms.date" content="2025-03-13">
 
-<title>User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</title>
+<title>User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R Using the Mice Package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</a> 
+      <a href="./">User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R Using the Mice Package</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -196,7 +196,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</h1>
+<h1 class="title">User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R Using the Mice Package</h1>
 </div>
 
 
@@ -227,10 +227,10 @@ div.csl-indent {
 
 <section id="introduction" class="level1 unnumbered">
 <h1 class="unnumbered">Introduction</h1>
-<p>Data has become the lifeblood on today’s world. It is used in almost every industry to track, organize, and solve businesses problems. This is why it is more crucial than ever to understand how to handle data properly to get results that can help you grow your business. One of the issues that comes across when analyzing a data set in dealing with missing values. Our first instinct is to throw those values out and analyze that data that we do have, yet this is not a viable option according to Little, <span class="citation" data-cites="little2021">Little (<a href="references.html#ref-little2021" role="doc-biblioref">2021</a>)</span>. Little discusses in his paper a variety of ways to properly estimate missing values in a data set, one option is imputation likelihood methods. This method allows you to get estimates for your missing values which intern allows you to get accurate information from your data set as a whole. A package called “mice” found in R can complete these missing data estimations which allow you to properly analyze your data, <span class="citation" data-cites="vanbuurenMiceMultivariateImputation2006">Van Buuren and Groothuis-Oudshoorn (<a href="references.html#ref-vanbuurenMiceMultivariateImputation2006" role="doc-biblioref">n.d.</a>)</span>. This guide will attempt to discuss the processes and methods involved with using this package on a data set. This example will be used as a guide to understanding how to implement this package on future data that you may come across.</p>
+<p>Data has become the lifeblood of today’s world. It is used in almost every industry to track, organize, and solve businesses problems. This is why it is more crucial than ever to understand how to handle data properly to get results that can help you grow your business. One of the issues that comes across when analyzing a data set in dealing with missing values. Our first instinct is to throw those values out and analyze that data that we do have, yet this is not a viable option according to Little, <span class="citation" data-cites="little2021">Little (<a href="references.html#ref-little2021" role="doc-biblioref">2021</a>)</span>. Little discusses in his paper a variety of ways to properly estimate missing values in a data set, one option is imputation likelihood methods. This method allows you to get estimates for your missing values which intern allows you to get accurate information from your data set as a whole. A package called “mice” found in R can complete these missing data estimations which allow you to properly analyze your data, <span class="citation" data-cites="vanbuurenMiceMultivariateImputation2006">Van Buuren and Groothuis-Oudshoorn (<a href="references.html#ref-vanbuurenMiceMultivariateImputation2006" role="doc-biblioref">n.d.</a>)</span>. This guide will attempt to discuss the processes and methods involved with using this package on a data set. This example will be used as a guide to understanding how to implement this package on future data that you may come across.</p>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>The prerequisites to understanding how to use this package are basic statistical knowledge and ability on par with running a linear model in R. You have to understand how to recognize missing data and how to classify variables, numerical, categorical, etc. Knowing what missing data is. You must understand the basics of matrices along with applying different manipulations to data. The software needed to complete this task can be found in the R packages lattice and mice for the simple example which will be described in detail below. There is other packages that the you may need but that will be on a case by case basis.</p>
+<p>The prerequisites to understanding how to use this package are basic statistical knowledge and ability on par with running a linear model in R. You have to understand how to recognize missing data and how to classify variables, numerical, categorical, etc. You need to know what missing values in a data set are. You must understand the basics of matrices along with applying different manipulations to data. The software needed to complete this task can be found in the R packages lattice and mice for the simple example which will be described in detail below. There is other packages that the you may need but that will be on a case by case basis. The pure imputation is done purely by the mice package itself which can be found in the example section.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
