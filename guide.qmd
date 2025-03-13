@@ -1,12 +1,4 @@
-## Introduction
-
-Data has become the lifeblood on today's world. It is used in almost every industry to track, organize, and solve businesses problems. This is why it is more crucial than ever to understand how to handle data properly to get results that can help you grow your business. One of the issues that comes across when analyzing a data set in dealing with missing values. Our first instinct is to throw those values out and analyze that data that we do have, yet this is not a viable option according to Little, @little2021. Little discusses in his paper a variety of ways to properly estimate missing values in a data set, one option is imputation likelihood methods. This method allows you to get estimates for your missing values which intern allows you to get accurate information from your data set as a whole. A package called "mice" found in R can complete these missing data estimations which allow you to properly analyze your data, @vanbuurenMiceMultivariateImputation2006. This guide will attempt to discuss the processes and methods involved with using this package on a data set. This example will be used as a guide to understanding how to implement this package on future data that you may come across.
-
-## Prerequisites
-
-The prerequisites to understanding how to use this package are basic statistical knowledge and ability on par with running a linear model in R. You have to understand how to recognize missing data and how to classify variables, numerical, categorical, etc. Knowing what missing data is. You must understand the basics of matrices along with applying different manipulations to data. The software needed to complete this task can be found in the R packages lattice and mice for the simple example which will be described in detail below. There is other packages that the you may need but that will be on a case by case basis.
-
-## Explanation of Example
+# Explanation of Example {.unnumbered}
 
 ### Motivation
 
@@ -14,7 +6,11 @@ The example from the mice package will show the basics of how and when to use th
 
 ### Example
 
-1.  The first step of this example is to load in the mice package. The next object is to load in an example data set from the mice package for demonstration. In most cases your data set will be loaded in before you call you package. This will allow you to see the structure of the data and if the mice package is necessary.
+#### Step 1
+
+The first step of this example is to load in the mice package. The next object is to load in an example data set from the mice package for demonstration. In most cases your data set will be loaded in before you call you package. This will allow you to see the structure of the data and if the mice package is necessary.
+
+##### Loading in Data
 
 ```{r}
 # Load required package
@@ -28,72 +24,97 @@ str(nhanes2)
 
 We can see from the output provided we can see that type of variables we are dealing with along with what they will be coded as in the data set. We can see that we have 25 observations with 4 variables. We can also see the type of each variable which will come in handy later when selecting the imputation method to estimate the missing values.
 
-2.  The next step is optional and it is to create a plot that will allow you to see where the missing values are in your data set.
+#### Step 2
 
-    ```{r}
-    # Check missing data pattern
-    md.pattern(nhanes2)
-    ```
+The next step is optional and it is to create a plot that will allow you to see where the missing values are in your data set.
+
+##### Visualizing Missingness in Data
+
+```{r}
+# Check missing data pattern
+md.pattern(nhanes2)
+```
 
 This graph shows us the pattern of missingness between variables. This plot can be broken down into different parts, the bottom row tells you how many missing values are in each variable. The red boxes show missing values while blue boxes show non - missing values. The left hand column shows the number of rows that follow the missingness pattern, while the right hand column shows the number of missing values in each row. This graph gives us a visual description of the data and the mssingness pattern throughout. You can make this graph to deepen your understanding of the missingness patterns in your data which paint a better picture than just the structure of the data.
 
-3.  You now understand the missingness pattern in the data you must now apply methods of estimations for the mice package. You can do this by understanding how each variable is categorized. We can look back at the structure of the data found in step 1. This will allow us to see how to apply methods of estimation as it is based on the type of variables you are dealing with.
+#### Step 3
 
-    ![](flow%20chart.png)
+You now understand the missingness pattern in the data you must now apply methods of estimations for the mice package. You can do this by understanding how each variable is categorized. We can look back at the structure of the data found in step 1. This will allow us to see how to apply methods of estimation as it is based on the type of variables you are dealing with.
 
-This chart allows you to see how to select imputation methods based on what type of variables you have. It is not necessary to understand deeply how these imputation methods work to run and execute the code flawlessly. Yet more information will be provided later in the paper via the vignette for this package. In our case we have four variables: Age, bmi, hyp, chl. We know that age is a factor with 3 levels so it is a multilevel categorical variable. We also know that bmi and chl are numerical. Finally we know from step two that hyp is a factor with 2 levels and is intern binary data. Described in the chart above.
+![](flow%20chart.png)
+
+This chart allows you to see how to select imputation methods based on what type of variables you have. It is not necessary to understand deeply how these imputation methods work to run and execute the code flawlessly. Yet more information will be provided later in the paper via the vignette for this package. In our case we have four variables: "Age", "bmi", "hyp", "chl". We know that age is a factor with 3 levels so it is a multilevel categorical variable. We also know that "bmi" and "chl" are numerical. Finally we know from step two that "hyp" is a factor with 2 levels and is intern binary data. Described in the chart above.
 
 You will now create the vector for our methods section.
+
+##### Defining Imputation Methods
 
 ```{r}
 # Define the imputation method for each variable
 meth <- c("polyreg", "pmm", "logreg", "pmm")  # logreg for binary, polyreg for categorical
-
 ```
 
 This will now allow you to properly estimate your missing values based on each imputation method that you have chosen.
 
-4.  The next step in this process is to understand what our prediction matrix is and how to do it assemble it.
+#### Step 4
 
-    ```{r}
-    # Define the predictor matrix (set diagonal to 0)
-    pred_matrix <- quickpred(nhanes2)
-    pred_matrix
-    ```
+The next step in this process is to understand what our prediction matrix is and how to do it assemble it.
 
-    The prediction matrix is a necessary part of the imputation calculation it tells us what values to use in the estimation process. The first row is aobu the variable age, if you remeber from the missingness graph in step 2, we know that age has no missing values and there for has all zeros in the first row. The second row of the matrix is describing bmi, we can see that we have a 1 in the columns of age, hyp, and chl. This means for the variable bmi we have missing values and the package will use age, hyp, and chl to estimate the missing values of bmi. This same process takes place for the remaining two columns.
+##### Creating Prediction Matrix
 
-5.  Our next step is finally to complete our imputation of the data.
+```{r}
+# Define the predictor matrix (set diagonal to 0)
+pred_matrix <- quickpred(nhanes2)
+pred_matrix
+```
 
-    ```{r}
-    # Perform multiple imputation
-    imp <- mice(nhanes2, method = meth, predictorMatrix = pred_matrix, m = 5, maxit = 10)
-    ```
+The prediction matrix is a necessary part of the imputation calculation it tells us what values to use in the estimation process. The first row is about the variable age, if you remember from the missingness graph in step 2, we know that age has no missing values and there for has all zeros in the first row. The second row of the matrix is describing "bmi", we can see that we have a 1 in the columns of "age", "hyp", and "chl". This means for the variable "bmi" we have missing values and the package will use "age", "hyp", and "chl" to estimate the missing values of "bmi". This same process takes place for the remaining two columns.
+
+#### Step 5
+
+Our next step is finally to complete our imputation of the data.
+
+##### Running Imputation
+
+```{r}
+# Perform multiple imputation
+imp <- mice(nhanes2, method = meth, predictorMatrix = pred_matrix, m = 5, maxit = 10)
+```
 
 The function mice will run the imputation and create the basis for the best estimation with your data. You should have a good understanding of every part of this function besides the m and maxit sections. The m section is the number of imputed data sets that were created, 5 being a base number. The maxit section is the number of iterations were used for the imputation algorithm. These values are both base values and can be changed depending on the situation.
 
-6.  The next step is to summarize the imputation data and compare the imputed data with the original data set.
+#### Step 6
 
-    ```{r}
-    # Check summary of imputed data
-    summary(imp)
-    # Compare original vs. imputed data
-    stripplot(imp, pch = 20, cex = 1.2)
+The next step is to summarize the imputation data and compare the imputed data with the original data set.
 
-    ```
+##### Summary of Imputation and Comparison Between Original
 
-When you run this code you see how many imputed data sets you have. In other words how many estimations you have for the missing values. This is a harder topic to understand but in the code above it was specified to impute 5 data sets which means we get five estimates for each missing value. This allows us to pool this information in linear regression which will be show later. We also see the summary of the methods used for each variable. In the output we also get a graphs that compares the values from the numerical variables that were imputed, bmi and chl. This graph has for columns, 0 is the original data and 1 - 5 are each imputed data set. The blue dots are the original data and the pink dots are the imputed estimates. This graphs allows us to see how the estimates compare to the original data. In our case we can see that the imputed values fit very will with the original data and we do not see anything that does not look realistic.
+```{r}
+# Check summary of imputed data
+summary(imp)
+# Compare original vs. imputed data
+stripplot(imp, pch = 20, cex = 1.2)
 
-7.  The final step in our example is to fit a linear model with the data and pool across all imputed data sets to get a result. You can then compare the results of the pooled data vs the original data without missing values and see how you estimates would be different.
+```
 
-    ```{r}
-    # Analyze each imputed dataset and pool results (Example: Regression model)
-    fit <- with(imp, lm(bmi ~ age + hyp + chl))
-    pooled <- pool(fit)
-    summary(pooled)
-    ```
+When you run this code you see how many imputed data sets you have. In other words how many estimations you have for the missing values. This is a harder topic to understand but in the code above it was specified to impute 5 data sets which means we get five estimates for each missing value. This allows us to pool this information in linear regression which will be show later. We also see the summary of the methods used for each variable. In the output we also get a graphs that compares the values from the numerical variables that were imputed, "bmi" and "chl". This graph has for columns, 0 is the original data and 1 - 5 are each imputed data set. The blue dots are the original data and the pink dots are the imputed estimates. This graphs allows us to see how the estimates compare to the original data. In our case we can see that the imputed values fit very will with the original data and we do not see anything that does not look realistic.
+
+#### Step 7
+
+The final step in our example is to fit a linear model with the data and pool across all imputed data sets to get a result. You can then compare the results of the pooled data vs the original data without missing values and see how you estimates would be different.
+
+##### Pooling Imputed Data
+
+```{r}
+# Analyze each imputed dataset and pool results (Example: Regression model)
+fit <- with(imp, lm(bmi ~ age + hyp + chl))
+pooled <- pool(fit)
+summary(pooled)
+```
 
 The function with combines your imputed data with the linear model example above. The pool function then pools across all imputed data sets and gives you an average of all of your estimates, in our case 5. You then have a linear model "pool" that you can summarize and compare with our original data set with out imputation and missing values.
+
+##### Original Data in Linear Model
 
 ```{r}
 clean_data <- na.omit(nhanes2)
@@ -105,3 +126,5 @@ summary(fit1)
 From the two summary statements above you can see that you have a vast difference in the estimates of the coefficients between fit1 without the NA values and pooled with estimates for missing values. This allows you to understand that estimating for missing values does have a major impact on the model and in the end the conclusions that you make.
 
 ## Conclusion
+
+This user guide hopefully provided a good overall explanation of a basic analysis with mice. This explanation discussed the elements of the mice package and how to use them. This example was fairly basic for more detailed examples and other questions regarding the package consult the R documentation in the references page, @buurenMiceMultivariateImputation2011a. If you are interested in the mathematics and proofs behind imputation and the specifies of why to use it in missing value situation consult @afifiMissingObservationsMultivariate1966, @andersonMaximumLikelihoodEstimates1957, and @little2021). These resources will provide you the information you need to handle any challenge regarding imputation methods and the mice package. Hopefully when analyzing data you now not only understand the importance of missing value estimation but know how to execute it with the mice package.

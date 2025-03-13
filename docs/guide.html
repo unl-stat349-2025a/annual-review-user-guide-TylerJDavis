@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-03-13">
 
-<title>User Guide: Annual Review Article Topic - 1&nbsp; Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</title>
+<title>User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R - Explanation of Example</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,7 +136,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guide.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guide.html">Explanation of Example</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -151,7 +151,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">User Guide: Annual Review Article Topic</a> 
+      <a href="./">User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -164,13 +164,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignment Flow</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./guide.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</span></span></a>
+ <span class="menu-text">Explanation of Example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,14 +218,9 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">1.2</span> Prerequisites</a></li>
-  <li><a href="#explanation-of-example" id="toc-explanation-of-example" class="nav-link" data-scroll-target="#explanation-of-example"><span class="header-section-number">1.3</span> Explanation of Example</a>
-  <ul class="collapse">
-  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation"><span class="header-section-number">1.3.1</span> Motivation</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">1.3.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">1.4</span> Conclusion</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -234,7 +229,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R</span></h1>
+<h1 class="title">Explanation of Example</h1>
 </div>
 
 
@@ -257,25 +252,17 @@ div.csl-indent {
 </header>
 
 
-<section id="introduction" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>Data has become the lifeblood on today’s world. It is used in almost every industry to track, organize, and solve businesses problems. This is why it is more crucial than ever to understand how to handle data properly to get results that can help you grow your business. One of the issues that comes across when analyzing a data set in dealing with missing values. Our first instinct is to throw those values out and analyze that data that we do have, yet this is not a viable option according to Little, <span class="citation" data-cites="little2021">Little (<a href="references.html#ref-little2021" role="doc-biblioref">2021</a>)</span>. Little discusses in his paper a variety of ways to properly estimate missing values in a data set, one option is imputation likelihood methods. This method allows you to get estimates for your missing values which intern allows you to get accurate information from your data set as a whole. A package called “mice” found in R can complete these missing data estimations which allow you to properly analyze your data, <span class="citation" data-cites="vanbuurenMiceMultivariateImputation2006">Van Buuren and Groothuis-Oudshoorn (<a href="references.html#ref-vanbuurenMiceMultivariateImputation2006" role="doc-biblioref">n.d.</a>)</span>. This guide will attempt to discuss the processes and methods involved with using this package on a data set. This example will be used as a guide to understanding how to implement this package on future data that you may come across.</p>
-</section>
-<section id="prerequisites" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">1.2</span> Prerequisites</h2>
-<p>The prerequisites to understanding how to use this package are basic statistical knowledge and ability on par with running a linear model in R. You have to understand how to recognize missing data and how to classify variables, numerical, categorical, etc. Knowing what missing data is. You must understand the basics of matrices along with applying different manipulations to data. The software needed to complete this task can be found in the R packages lattice and mice for the simple example which will be described in detail below. There is other packages that the you may need but that will be on a case by case basis.</p>
-</section>
-<section id="explanation-of-example" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="explanation-of-example"><span class="header-section-number">1.3</span> Explanation of Example</h2>
-<section id="motivation" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">1.3.1</span> Motivation</h3>
+<section id="motivation" class="level3">
+<h3 class="anchored" data-anchor-id="motivation">Motivation</h3>
 <p>The example from the mice package will show the basics of how and when to use this package to estimate missing values in a data set. This will allow you to have a basis of understanding regarding estimation of missing values using the mice package.</p>
 </section>
-<section id="example" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">1.3.2</span> Example</h3>
-<ol type="1">
-<li>The first step of this example is to load in the mice package. The next object is to load in an example data set from the mice package for demonstration. In most cases your data set will be loaded in before you call you package. This will allow you to see the structure of the data and if the mice package is necessary.</li>
-</ol>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<section id="step-1" class="level4">
+<h4 class="anchored" data-anchor-id="step-1">Step 1</h4>
+<p>The first step of this example is to load in the mice package. The next object is to load in an example data set from the mice package for demonstration. In most cases your data set will be loaded in before you call you package. This will allow you to see the structure of the data and if the mice package is necessary.</p>
+<section id="loading-in-data" class="level5">
+<h5 class="anchored" data-anchor-id="loading-in-data">Loading in Data</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required package</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -325,8 +312,13 @@ Attaching package: 'mice'</code></pre>
 </div>
 </div>
 <p>We can see from the output provided we can see that type of variables we are dealing with along with what they will be coded as in the data set. We can see that we have 25 observations with 4 variables. We can also see the type of each variable which will come in handy later when selecting the imputation method to estimate the missing values.</p>
-<ol start="2" type="1">
-<li><p>The next step is optional and it is to create a plot that will allow you to see where the missing values are in your data set.</p>
+</section>
+</section>
+<section id="step-2" class="level4">
+<h4 class="anchored" data-anchor-id="step-2">Step 2</h4>
+<p>The next step is optional and it is to create a plot that will allow you to see where the missing values are in your data set.</p>
+<section id="visualizing-missingness-in-data" class="level5">
+<h5 class="anchored" data-anchor-id="visualizing-missingness-in-data">Visualizing Missingness in Data</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check missing data pattern</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">md.pattern</span>(nhanes2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -346,22 +338,30 @@ Attaching package: 'mice'</code></pre>
 7    1   0   0   0  3
      0   8   9  10 27</code></pre>
 </div>
-</div></li>
-</ol>
+</div>
 <p>This graph shows us the pattern of missingness between variables. This plot can be broken down into different parts, the bottom row tells you how many missing values are in each variable. The red boxes show missing values while blue boxes show non - missing values. The left hand column shows the number of rows that follow the missingness pattern, while the right hand column shows the number of missing values in each row. This graph gives us a visual description of the data and the mssingness pattern throughout. You can make this graph to deepen your understanding of the missingness patterns in your data which paint a better picture than just the structure of the data.</p>
-<ol start="3" type="1">
-<li><p>You now understand the missingness pattern in the data you must now apply methods of estimations for the mice package. You can do this by understanding how each variable is categorized. We can look back at the structure of the data found in step 1. This will allow us to see how to apply methods of estimation as it is based on the type of variables you are dealing with.</p>
-<p><img src="flow chart.png" class="img-fluid"></p></li>
-</ol>
-<p>This chart allows you to see how to select imputation methods based on what type of variables you have. It is not necessary to understand deeply how these imputation methods work to run and execute the code flawlessly. Yet more information will be provided later in the paper via the vignette for this package. In our case we have four variables: Age, bmi, hyp, chl. We know that age is a factor with 3 levels so it is a multilevel categorical variable. We also know that bmi and chl are numerical. Finally we know from step two that hyp is a factor with 2 levels and is intern binary data. Described in the chart above.</p>
+</section>
+</section>
+<section id="step-3" class="level4">
+<h4 class="anchored" data-anchor-id="step-3">Step 3</h4>
+<p>You now understand the missingness pattern in the data you must now apply methods of estimations for the mice package. You can do this by understanding how each variable is categorized. We can look back at the structure of the data found in step 1. This will allow us to see how to apply methods of estimation as it is based on the type of variables you are dealing with.</p>
+<p><img src="flow chart.png" class="img-fluid"></p>
+<p>This chart allows you to see how to select imputation methods based on what type of variables you have. It is not necessary to understand deeply how these imputation methods work to run and execute the code flawlessly. Yet more information will be provided later in the paper via the vignette for this package. In our case we have four variables: “Age”, “bmi”, “hyp”, “chl”. We know that age is a factor with 3 levels so it is a multilevel categorical variable. We also know that “bmi” and “chl” are numerical. Finally we know from step two that “hyp” is a factor with 2 levels and is intern binary data. Described in the chart above.</p>
 <p>You will now create the vector for our methods section.</p>
+<section id="defining-imputation-methods" class="level5">
+<h5 class="anchored" data-anchor-id="defining-imputation-methods">Defining Imputation Methods</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the imputation method for each variable</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>meth <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"polyreg"</span>, <span class="st">"pmm"</span>, <span class="st">"logreg"</span>, <span class="st">"pmm"</span>)  <span class="co"># logreg for binary, polyreg for categorical</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will now allow you to properly estimate your missing values based on each imputation method that you have chosen.</p>
-<ol start="4" type="1">
-<li><p>The next step in this process is to understand what our prediction matrix is and how to do it assemble it.</p>
+</section>
+</section>
+<section id="step-4" class="level4">
+<h4 class="anchored" data-anchor-id="step-4">Step 4</h4>
+<p>The next step in this process is to understand what our prediction matrix is and how to do it assemble it.</p>
+<section id="creating-prediction-matrix" class="level5">
+<h5 class="anchored" data-anchor-id="creating-prediction-matrix">Creating Prediction Matrix</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the predictor matrix (set diagonal to 0)</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pred_matrix <span class="ot">&lt;-</span> <span class="fu">quickpred</span>(nhanes2)</span>
@@ -374,8 +374,14 @@ hyp   1   0   0   1
 chl   1   1   1   0</code></pre>
 </div>
 </div>
-<p>The prediction matrix is a necessary part of the imputation calculation it tells us what values to use in the estimation process. The first row is aobu the variable age, if you remeber from the missingness graph in step 2, we know that age has no missing values and there for has all zeros in the first row. The second row of the matrix is describing bmi, we can see that we have a 1 in the columns of age, hyp, and chl. This means for the variable bmi we have missing values and the package will use age, hyp, and chl to estimate the missing values of bmi. This same process takes place for the remaining two columns.</p></li>
-<li><p>Our next step is finally to complete our imputation of the data.</p>
+<p>The prediction matrix is a necessary part of the imputation calculation it tells us what values to use in the estimation process. The first row is about the variable age, if you remember from the missingness graph in step 2, we know that age has no missing values and there for has all zeros in the first row. The second row of the matrix is describing “bmi”, we can see that we have a 1 in the columns of “age”, “hyp”, and “chl”. This means for the variable bmi we have missing values and the package will use age, hyp, and chl to estimate the missing values of bmi. This same process takes place for the remaining two columns.</p>
+</section>
+</section>
+<section id="step-5" class="level4">
+<h4 class="anchored" data-anchor-id="step-5">Step 5</h4>
+<p>Our next step is finally to complete our imputation of the data.</p>
+<section id="running-imputation" class="level5">
+<h5 class="anchored" data-anchor-id="running-imputation">Running Imputation</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform multiple imputation</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>imp <span class="ot">&lt;-</span> <span class="fu">mice</span>(nhanes2, <span class="at">method =</span> meth, <span class="at">predictorMatrix =</span> pred_matrix, <span class="at">m =</span> <span class="dv">5</span>, <span class="at">maxit =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -433,11 +439,15 @@ chl   1   1   1   0</code></pre>
   10   4  bmi  hyp  chl
   10   5  bmi  hyp  chl</code></pre>
 </div>
-</div></li>
-</ol>
+</div>
 <p>The function mice will run the imputation and create the basis for the best estimation with your data. You should have a good understanding of every part of this function besides the m and maxit sections. The m section is the number of imputed data sets that were created, 5 being a base number. The maxit section is the number of iterations were used for the imputation algorithm. These values are both base values and can be changed depending on the situation.</p>
-<ol start="6" type="1">
-<li><p>The next step is to summarize the imputation data and compare the imputed data with the original data set.</p>
+</section>
+</section>
+<section id="step-6" class="level4">
+<h4 class="anchored" data-anchor-id="step-6">Step 6</h4>
+<p>The next step is to summarize the imputation data and compare the imputed data with the original data set.</p>
+<section id="summary-of-imputation-and-comparison-between-original" class="level5">
+<h5 class="anchored" data-anchor-id="summary-of-imputation-and-comparison-between-original">Summary of Imputation and Comparison Between Original</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check summary of imputed data</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(imp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -463,27 +473,33 @@ chl   1   1   1   0</code></pre>
 </figure>
 </div>
 </div>
-</div></li>
-</ol>
+</div>
 <p>When you run this code you see how many imputed data sets you have. In other words how many estimations you have for the missing values. This is a harder topic to understand but in the code above it was specified to impute 5 data sets which means we get five estimates for each missing value. This allows us to pool this information in linear regression which will be show later. We also see the summary of the methods used for each variable. In the output we also get a graphs that compares the values from the numerical variables that were imputed, bmi and chl. This graph has for columns, 0 is the original data and 1 - 5 are each imputed data set. The blue dots are the original data and the pink dots are the imputed estimates. This graphs allows us to see how the estimates compare to the original data. In our case we can see that the imputed values fit very will with the original data and we do not see anything that does not look realistic.</p>
-<ol start="7" type="1">
-<li><p>The final step in our example is to fit a linear model with the data and pool across all imputed data sets to get a result. You can then compare the results of the pooled data vs the original data without missing values and see how you estimates would be different.</p>
+</section>
+</section>
+<section id="step-7" class="level4">
+<h4 class="anchored" data-anchor-id="step-7">Step 7</h4>
+<p>The final step in our example is to fit a linear model with the data and pool across all imputed data sets to get a result. You can then compare the results of the pooled data vs the original data without missing values and see how you estimates would be different.</p>
+<section id="pooling-imputed-data" class="level5">
+<h5 class="anchored" data-anchor-id="pooling-imputed-data">Pooling Imputed Data</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analyze each imputed dataset and pool results (Example: Regression model)</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">with</span>(imp, <span class="fu">lm</span>(bmi <span class="sc">~</span> age <span class="sc">+</span> hyp <span class="sc">+</span> chl))</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>pooled <span class="ot">&lt;-</span> <span class="fu">pool</span>(fit)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pooled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         term    estimate  std.error  statistic        df      p.value
-1 (Intercept) 18.06216821 4.03151143  4.4802473 14.462902 0.0004798744
-2    age40-59 -5.78523554 2.34851437 -2.4633596  8.577625 0.0371948064
-3    age60-99 -7.67050097 2.27819232 -3.3669243 14.786484 0.0043093083
-4      hypyes  1.70556945 2.29481141  0.7432286 11.102978 0.4727771220
-5         chl  0.06015462 0.02124251  2.8318038 15.485902 0.0123211227</code></pre>
+<pre><code>         term    estimate  std.error  statistic        df    p.value
+1 (Intercept) 18.58661783 4.26705431  4.3558428  8.506207 0.00209721
+2    age40-59 -4.86807603 2.23068703 -2.1823214  8.166466 0.05996471
+3    age60-99 -6.37522514 2.21904381 -2.8729605 12.683949 0.01334819
+4      hypyes  1.09956679 2.25024304  0.4886436  8.714199 0.63715502
+5         chl  0.05569203 0.02330235  2.3899755  8.888389 0.04088795</code></pre>
 </div>
-</div></li>
-</ol>
+</div>
 <p>The function with combines your imputed data with the linear model example above. The pool function then pools across all imputed data sets and gives you an average of all of your estimates, in our case 5. You then have a linear model “pool” that you can summarize and compare with our original data set with out imputation and missing values.</p>
+</section>
+<section id="original-data-in-linear-model" class="level5">
+<h5 class="anchored" data-anchor-id="original-data-in-linear-model">Original Data in Linear Model</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(nhanes2)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bmi <span class="sc">~</span> age <span class="sc">+</span> hyp <span class="sc">+</span> chl, clean_data)</span>
@@ -516,16 +532,24 @@ F-statistic: 4.055 on 4 and 8 DF,  p-value: 0.04379</code></pre>
 <p>From the two summary statements above you can see that you have a vast difference in the estimates of the coefficients between fit1 without the NA values and pooled with estimates for missing values. This allows you to understand that estimating for missing values does have a major impact on the model and in the end the conclusions that you make.</p>
 </section>
 </section>
-<section id="conclusion" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">1.4</span> Conclusion</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This user guide hopefully provided a good overall explanation of a basic analysis with mice. This explanation discussed the elements of the mice package and how to use them. This example was fairly basic for more detailed examples and other questions regarding the package consult the R documentation in the references page, <span class="citation" data-cites="buurenMiceMultivariateImputation2011a">Buuren and Groothuis-Oudshoorn (<a href="references.html#ref-buurenMiceMultivariateImputation2011a" role="doc-biblioref">2011</a>)</span>. If you are interested in the mathematics and proofs behind imputation and the specifies of why to use it in missing value situation consult <span class="citation" data-cites="afifiMissingObservationsMultivariate1966">Afifi and Elashoff (<a href="references.html#ref-afifiMissingObservationsMultivariate1966" role="doc-biblioref">1966</a>)</span>, <span class="citation" data-cites="andersonMaximumLikelihoodEstimates1957">Anderson (<a href="references.html#ref-andersonMaximumLikelihoodEstimates1957" role="doc-biblioref">1957</a>)</span>, and <span class="citation" data-cites="little2021">Little (<a href="references.html#ref-little2021" role="doc-biblioref">2021</a>)</span>). These resources will provide you the information you need to handle any challenge regarding imputation methods and the mice package. Hopefully when analyzing data you now not only understand the importance of missing value estimation but know how to execute it with the mice package.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-afifiMissingObservationsMultivariate1966" class="csl-entry" role="listitem">
+Afifi, A. A., and R. M. Elashoff. 1966. <span>“Missing Observations in Multivariate Statistics: I. Review of the Literature.”</span> <em>Journal of the American Statistical Association</em> 61 (315): 595–604. <a href="https://doi.org/10.2307/2282773">https://doi.org/10.2307/2282773</a>.
+</div>
+<div id="ref-andersonMaximumLikelihoodEstimates1957" class="csl-entry" role="listitem">
+Anderson, T. W. 1957. <span>“Maximum Likelihood Estimates for a Multivariate Normal Distribution When Some Observations Are Missing.”</span> <em>Journal of the American Statistical Association</em> 52 (278): 200–203. <a href="https://doi.org/10.2307/2280845">https://doi.org/10.2307/2280845</a>.
+</div>
+<div id="ref-buurenMiceMultivariateImputation2011a" class="csl-entry" role="listitem">
+Buuren, Stef Van, and Karin Groothuis-Oudshoorn. 2011. <span>“<span><strong>Mice</strong></span> : Multivariate Imputation by Chained Equations in <span><em>R</em></span>.”</span> <em>Journal of Statistical Software</em> 45 (3). <a href="https://doi.org/10.18637/jss.v045.i03">https://doi.org/10.18637/jss.v045.i03</a>.
+</div>
 <div id="ref-little2021" class="csl-entry" role="listitem">
 Little, Roderick J. 2021. <span>“Missing Data Assumptions.”</span> <em>Annual Review of Statistics and Its Application</em> 8 (1): 89–107. <a href="https://doi.org/10.1146/annurev-statistics-040720-031104">https://doi.org/10.1146/annurev-statistics-040720-031104</a>.
-</div>
-<div id="ref-vanbuurenMiceMultivariateImputation2006" class="csl-entry" role="listitem">
-Van Buuren, Stef, and Karin Groothuis-Oudshoorn. n.d. <span>“Mice: Multivariate Imputation by Chained Equations.”</span> <a href="https://doi.org/10.32614/CRAN.package.mice">https://doi.org/10.32614/CRAN.package.mice</a>.
 </div>
 </div>
 </section>
@@ -920,8 +944,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link  aria-label=" assignment="" flow"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment Flow</span>
+      <a href="./index.html" class="pagination-link  aria-label=" introduction"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -934,7 +958,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Copyright 2025, Author Name</p>
+<p>Copyright 2025, Tyler Davis</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
