@@ -8,12 +8,11 @@ date-format: long
 from: markdown+emoji
 
 book:
-  title: "User Guide: Annual Review Article Topic"
-  author: "Author Name"
+  title: "User Guide: Implementation of Imputation Likelihood Methods in Estimating Missing Data Values in R"
+  author: "Tyler Davis"
   page-footer:
-    left: "Copyright 2025, Author Name"
+    left: "Copyright 2025, Tyler Davis"
   chapters:
-    - index.qmd # Remove this before you submit your final report!
     - guide.qmd
     - references.qmd
   appendices:

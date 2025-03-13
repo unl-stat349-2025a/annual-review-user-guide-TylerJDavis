@@ -1,0 +1,16 @@
+---
+title: "flow"
+editor: visual
+---
+
+\`\`\`{mermaid} graph TD; A(Start) --\> B{Is the variable numerical (continuous)?} B --\>\|Yes\| C\["Use 'pmm' (default)"\] B --\>\|Alternative\| D\["Use 'norm' or 'rf'"\] B --\>\|No\| E{Is the variable categorical?}
+
+```         
+E -->|Binary?| F["Use 'logreg' (Logistic Regression)"]
+E -->|Multiclass?| G["Use 'polyreg' (Multinomial Regression)"]
+
+G --> H{Is it an ordered categorical variable?}
+H -->|Yes| I["Use 'polr' (Proportional Odds Model)"]
+
+E -->|Hierarchical data?| J["Use '2l.norm' (Normal) or '2l.pmm' (PMM)"]
+```
