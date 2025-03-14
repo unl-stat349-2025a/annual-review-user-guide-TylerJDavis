@@ -122,7 +122,7 @@ pooled <- pool(fit)
 summary(pooled)
 ```
 
-The function with combines your imputed data with the linear model example above. The pool function then pools across all imputed data sets and gives you an average of all of your estimates, in our case 5. You then have a linear model "pooled" that you can summarize and compare with our original data set with out imputation and missing values.
+The function "with" combines your imputed data with the linear model example above. The pool function then pools across all imputed data sets and gives you an average of all of your estimates, in our case 5. You then have a linear model "pooled" that you can summarize and compare with our original data set with out imputation and missing values.
 
 #### Original Data in Linear Model
 

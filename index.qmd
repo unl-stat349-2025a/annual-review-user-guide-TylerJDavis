@@ -10,7 +10,7 @@ Data has become the lifeblood of today's world.
 It is used in almost every industry to track, organize, and solve businesses problems.
 This is why it is more crucial than ever to understand how to handle data properly to get results that can help you grow your business.
 One of the issues that comes across when analyzing a data set in dealing with missing values.
-Our first instinct is to throw those values out and analyze that data that we do have, yet this is not a viable option according to Little, @little2021.
+Our first instinct is to throw those values out and analyze that data that we do have, yet this is not a viable option according to @little2021.
 Little discusses in his paper a variety of ways to properly estimate missing values in a data set, one option is imputation likelihood methods.
 This method allows you to get estimates for your missing values which intern allows you to get accurate information from your data set as a whole.
 A package called "mice" found in R can complete these missing data estimations which allow you to properly analyze your data, @vanbuurenMiceMultivariateImputation2006.
